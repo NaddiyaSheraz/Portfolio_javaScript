@@ -48,6 +48,12 @@ li {
   font-size: 32px;
 }
 
+.logo img{
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+}
+
 /* NAVBAR MENU */
 .menu {
   display: flex;
@@ -63,11 +69,6 @@ li {
   color: aliceblue;
 }
 
-/* DROPDOWN MENU */
-.services {
-  position: relative;
-}
-
 /* RESPONSIVE NAVBAR MENU STARTS */
 
 /* CHECKBOX HACK */
@@ -76,67 +77,67 @@ input[type=checkbox] {
   display: none;
 }
 
-/* HAMBURGER MENU */
 .hamburger {
-  display: none;
-  font-size: 24px;
-  user-select: none;
+  display: none; /* Hide on larger screens */
+  cursor: pointer;
+  font-size: 30px;
+  /* position: absolute; */
+  /* top: 16px; */
+  /* right: 16px; */
+  /* z-index: 1000; */
+  color: white;
 }
 
 /* navbar APPLYING MEDIA QUERIES */
 @media (max-width: 768px) {
   .menu {
-    display: none;
-    position: absolute;
-    background-color: #B689F7;
-    right: 0;
-    left: 0;
-    text-align: center;
-    padding: 16px 0;
-  }
+     display:none;
+     position: absolute;
+     background-color: #A673F5;
+     right: 0;
+     left: 0;
+     text-align: center;
+     padding: 16px 0;
+   }
+ 
+   .menu li:hover {
+     display: inline-block;
+     background-color: linear-gradient(90deg, #C79DF8, #B689F7, #A673F5);
+     transition: 0.3s ease;
+   }
+ 
+   .menu li + li {
+     margin-top: 12px;
+   }
+ 
+   input[type=checkbox]:checked ~ .menu {
+     display: block;
+   }
+ 
+   .hamburger {
+     display: block;
+   }
 
-  .menu li:hover {
-    display: inline-block;
-    background: linear-gradient(90deg, #C79DF8, #B689F7, #A673F5);;
-    transition: 0.3s ease;
-  }
 
-  .menu li+li {
-    margin-top: 12px;
-  }
+ 
+   .dropdown {
+     left: 50%;
+     top: 30px;
+     transform: translateX(35%);
+   }
+ 
+   .dropdown li:hover {
+     background-color: #4c9e9e;
+   }
+ }
 
-  input[type=checkbox]:checked~.menu {
-    display: block;
-  }
-
-}
-
-
-
-
-/* image section after navbar*/
+/*////////////// image section after navbar*/
 #image_sec {
   display: block;
   justify-content:center;
   padding: 2rem;
 
 }
-
-/* #img_sec_top {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-  color: #333;
-  align-items: center;
-  word-spacing: 1rem;
-  font-size: 36px;
-  padding: 0 5rem;
-  text-align: center;
-  line-height: 2rem;
-  letter-spacing: 0.02em; 
-  text-transform: uppercase; 
-  margin-bottom: 1rem;
-} */
 
 span {
   color: #8d39f1;
@@ -161,8 +162,7 @@ span {
   border-right: 2px solid #9b59b6;
   animation: typing 4s steps(30, end) forwards, blink 0.5s step-end infinite;
   max-width: 550px;
-  word-wrap: break-word;
-  
+  word-wrap: break-word;  
 }
 
 #typing-text span {
@@ -183,7 +183,7 @@ span {
     width: 0;
   }
   to {
-    width: 100%; /* Adjust based on your text length */
+    width: 100%;
   }
 }
 
@@ -199,8 +199,6 @@ span {
   align-items: center;
   width: 100%;
   height: 300px; 
-  width: 100%;
-  height: 300px;
 }
 
 .col1 {
@@ -217,7 +215,6 @@ span {
   align-self: flex-start;
   padding-top: 2rem;
   width: 50px;
-  
 }
 
 #left_btn button{
@@ -274,7 +271,6 @@ span {
   align-items: center;    
   height: 50vh;   
   padding: 0px;
-
 }
 
 #middle_btn img {
@@ -297,7 +293,149 @@ span {
 }
 
 /* image section APPLYING MEDIA QUERIES */
+@media (max-width: 1024px) {
+  #image_sec {
+    padding: 2rem;
+  }
 
+  #typing-text {
+    font-size: 32px;
+  }
+
+  #middle_btn img {
+    height: 280px;
+    width: 280px;
+  }
+}
+
+/* @media (max-width: 400px){
+  #image_sec {
+    padding: 1rem;
+  }
+
+  #typing-text{
+    font-weight: 700;
+    word-spacing: 0px;
+    font-size: 20px;
+  }
+
+  #typing-text2{
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  #img_sec_bottom{
+    display: inline-block;
+    align-items: center;
+    height: auto;
+  }
+
+  #left_btn, #right_btn{
+   display: block;
+   align-items: center;
+   padding-top: 0.5rem;
+   width: 100%;
+   margin-bottom: 3rem;
+  }
+
+  #left_btn button{
+    font-size: 15px;
+    font-weight: 300;
+
+  }
+  #right_btn button{
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 2rem;
+  }
+  #middle_btn{
+    height: 30vh;
+  }
+
+  #middle_btn img{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+  }
+
+} */
+@media (max-width: 400px) {
+  #image_sec {
+    padding: 1rem;
+
+  }
+
+  #typing-text {
+    font-weight: 700;
+    word-spacing: 0px;
+    font-size: 20px;
+    padding: 0 2rem; 
+  }
+
+  #typing-text2 {
+    padding: 1rem 2rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  #img_sec_bottom {
+    display: block; /* Changed to block for better stacking */
+    align-items: center;
+    height: auto;
+    align-items: center;
+  }
+
+  #left_btn{
+    display: block;
+    align-items: center;
+    padding-top: 0.5rem;
+    width: 100%;
+    text-align: center; /* Center-align the buttons */
+    margin-bottom: 3rem;
+  }
+
+  #right_btn {
+    display: block;
+    align-items: center;
+    padding-top: 0.5rem;
+    width: 100%;
+    text-align: center; /* Center-align the buttons */
+    margin-bottom: 1rem;
+  }
+
+  #right_btn {
+    display: block;
+    align-items: center;
+    padding-top: 0.5rem;
+    width: 100%;
+    text-align: center; /* Center-align the buttons */
+  }
+
+  #left_btn button {
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 2rem; 
+  }
+
+  #right_btn button {
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 4rem; 
+  }
+
+  #middle_btn {
+    height: 30vh;
+  }
+
+  #middle_btn img {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+  }
+}
 
 
 
@@ -332,9 +470,17 @@ span {
 }
 
 /* fulbar section APPLYING MEDIA QUERIES */
+@media (max-width: 1024px) {
+  #ful_bar ul li a {
+    font-size: 22px;
+  }
+}
 
-
-
+@media (max-width: 400px) {
+  #ful_bar ul li a {
+    font-size: 20px;
+  }
+}
 
 
 /* about section after links  */
@@ -350,6 +496,16 @@ span {
 #about_buttons{
   margin-top: 4rem;
 }
+
+
+#about_upper_right {
+  color: #ffffff;
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 24px;
+}
+
 #btn_fam1, #btn_fam2, #btn_fam3 {
   display: flex;
   align-items: center; 
@@ -402,14 +558,6 @@ span {
   font-weight: 500;
 }
 
-#about_upper_right {
-  color: #ffffff;
-  font-family: "Poppins", serif;
-  font-weight: 500;
-  font-style: italic;
-  font-size: 24px;
-}
-
 #btn_fam{
   display: flex;
 
@@ -419,10 +567,34 @@ span {
   display: flex;
 } 
 
-
-
-
 /*  APPLYING MEDIA QUERIES */
+
+@media (max-width: 1024px) {
+  #about_upper_left img{
+    width: 400px;
+    height: 400px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  #about_upper_left img{
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  #about_upper_right {
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+  #btn_fam1, #btn_fam2, #btn_fam3 {
+    margin: 10px;
+  }
+
+}
 
 /* product section after about  */
 #product_sec{
@@ -489,10 +661,41 @@ font-weight: 900;
   color:#8d39f1;
 
 }
+/* /////////media query */
+@media (max-width: 480px) {
+  #product_sec{
+    display: block;
+    justify-content: space-evenly;
+    padding: 3rem;
+  }
+  
+  #product_card .card1{
+    margin-right: 0rem;
+    margin-bottom: 1rem;  
+  }
 
+  #product_card{
+    display: block; 
+  }
+  
+  #pro_tex_heading h3{
+  font-size: 35px;
+  color: #8e44ad;
+  font-weight: 800;
+  }
+  
+  #pro_tex_heading p{
+    font-size: 18px;
+    
+  }
+}
 
 
 /* my work section  */
+#sec_5-1{
+  background-color: #181e41;
+}
+
 #my_work{
   background-color: #181e41;
   padding: 3rem;
@@ -500,10 +703,30 @@ font-weight: 900;
   justify-content: space-evenly;
 }
 
+#sec_5-1_heading {
+  font-family: 'Roboto', sans-serif; /* Set a modern font */
+  font-size: 38px; /* Set the font size */
+  font-weight: 800; /* Make the font bold */
+  color:#b99ce5; /* Dark gray-blue color */
+  text-align: center; /* Center-align the text */
+  margin-top: 40px; /* Add space at the top */
+  margin-bottom: 20px; /* Add space at the bottom */
+  letter-spacing: 1px; /* Slight spacing between letters */
+  text-transform: uppercase; /* Uppercase text for emphasis */
+  padding-top: 2rem;
+}
+
+/* Add hover effect */
+#sec_5-1_heading:hover {
+  color:#A049F7; /* Change color on hover */
+  transform: translateY(-3px); /* Slightly lift the heading */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
 /* Main Card Style */
 .custom-card {
   background-color: #d1b8f0 !important;
-  border-radius: 15px;
+  border-radius: 25px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.5); 
   overflow: hidden; 
   transition: all 0.4s ease; 
@@ -597,34 +820,204 @@ font-weight: 900;
   animation: fadeInUp 0.8s ease-out; /* Content fades and moves up on load */
 }
 
+#my_work_h5 {
+  font-family: 'Arial', sans-serif; /* Clean font family */
+  font-size: 20px; /* Font size */
+  font-weight: 500; /* Medium weight for a subtle look */
+  color: #2C3E50; /* Dark color for the text */
+  text-align: center; /* Center-align the text */
+  margin-bottom: 20px; /* Bottom margin for spacing */
+  line-height: 1.5; /* Spacing between lines */
+}
 
+/* Styling for the link */
+#my_work_h5 + #my_work_a {
+  display: inline-block;
+  text-decoration: none; /* Remove underline from the link */
+  background-color: #3498db; /* Button-like blue background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for button-like feel */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  text-align: center;
+}
+.class{
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.class #my_work_a {
+  text-decoration: none; 
+  background-color:#7E2DEC; /* Button-like blue background */
+  color: white; /* White text */
+  padding: 10px 20px;
+  border-radius: 7px;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  text-align: center;
+  width: 200px;
+}
+
+#my_work_h5 + #my_work_a:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: translateY(-5px); /* Slightly lift the link on hover */
+}
+
+
+/*////media   query*/
+@media (max-width: 480px){
+  #my_work{
+    padding: 3rem;
+    display: block;
+    justify-content: center;
+  }
+
+  .custom-card {
+   margin-bottom: 1rem;
+  }
+
+  #my_work_h5 {
+    font-size: 18px;
+    margin: 3px 20px 10px 20px; 
+  }
+}
 
 /* <<<<websites */
 
-/* General Card Styling */
+#websites-header {
+  font-family: 'Arial', sans-serif; /* Set the font family */
+  font-size: 49px; 
+  font-weight: bold; /* Make the text bold */
+  color: #ffffff; /* Dark blue-gray color for the text */
+  text-align: center; /* Center the text */
+  text-transform: uppercase; /* Make text uppercase */
+  letter-spacing: 2px; /* Add spacing between letters */
+  padding: 40px 0; /* Add padding to the top and bottom */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+}
 
+/* Hover effect */
+#websites-header:hover {
+  color:#8e44ad; /* Change text color on hover */
+  transform: translateY(-5px); /* Slightly lift the text on hover */
+}
+
+/* General Card Styling */
+#sec_5-2{
+  background-color: #CEA3FB;
+}
 #websites{
   display: flex;
   justify-content: space-around;
   gap: 2rem;
-  margin: 7rem;
+  padding: 2rem 7rem 2rem 7rem;
 }
+
+#websites2 {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+ padding: 2rem 7rem 5rem 7rem;
+}
+
 #custom-video {
   background-color: #f9f9f9; /* Light background */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   overflow: hidden; /* Ensures content stays within rounded edges */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-  background-color: #333;
-  
+  background-color: #A09FD9; 
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+#custom-video:hover {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  transform: translateY(-10px); /* Slight lift effect */
+}
 
+/* Text animation */
+.card-title-video {
+  animation: fadeIn 2s ease-out;
+  color:#ffffff;
+  font-size: 30px;
+}
 
+#websites-text{
+  color: #fffdfd;
+  text-align: center;
+  font-size: 25px;
+  padding: 1rem 5rem;
+  /* font-family: "Roboto", serif; */
+  font-family: "Playwrite  Guides", cursive;
+  font-weight: 300;
+  font-style: italic;
+}
 
+.card-text-video {
+  animation: slideIn 1.5s ease-out;
+  color:#A049F7;
+}
 
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
 
+@keyframes slideIn {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
 
+/* Button hover effect */
+.btn-primary {
+  transition: background-color 0.3s ease;
+  background-color: #A049F7;
+}
+
+.btn-primary:hover {
+  background-color: #c999fa; /* Darker blue shade on hover */
+}
+
+/*media query*/
+@media (max-width: 480px){
+  .upper-part{
+    padding: 10px;
+  }
+
+  #websites-header {
+    font-size: 45px; 
+    padding: 30px 0 20px 0; 
+  }
+  #websites-text{
+    font-size: 18px;
+    font-weight: 100;
+    padding: 0 20px;
+  }
+
+  #websites, #websites2 {
+    display: block;
+    padding: 3rem 2rem 2rem 1rem;
+   
+  }
+  
+  #websites2 {
+    display: block;
+   padding: 0 2rem 2rem 2rem;
+  }
+  #custom-video{
+    margin-bottom: 1rem !important;
+  }
+}
 
 /* General Section Styling */
 #message {
@@ -710,12 +1103,22 @@ font-weight: 900;
   transform: scale(1.05);
   background-color: #8e44ad;
 }
+/* media query*/
+@media (max-width: 480px){
+ 
+  .typewriter h2 {
+    font-size: 1.5rem; /* Aur chhoti screens ke liye font aur chhota karein */
+    line-height: 1.5; /* Text ko readable banane ke liye line height */
+    font-weight: 700;
+}
 
+}
 /* Footer Styling */
 .footer {
   text-align: center;
-  margin-top: 40px;
   background-color:#9b59b6;
+  padding-bottom: 5px;
+  
 }
 
 .footer .social-links {
